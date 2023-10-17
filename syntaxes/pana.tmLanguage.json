@@ -1,0 +1,157 @@
+{
+	"name": "Pana",
+	"scopeName": "source.pana",
+	"fileTypes": [
+		"pana"
+	],
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"variables": {
+			"patterns": [
+				{
+					"name": "meta.function.declaration.pana",
+					"patterns": [
+						{
+							"match": "\\b(fn)\\s+([a-zA-ZáéíóúñüÁÉÍÓÚÑÜ_][a-zA-Z0-9áéíóúñüÁÉÍÓÚÑÜ_]*)\\b",
+							"captures": {
+								"1": {
+									"name": "storage.type.function.pana"
+								},
+								"2": {
+									"name": "entity.name.function.pana"
+								}
+							}
+						},
+						{
+							"name": "keyword.default.pana",
+							"match": "\\b(const|var|fn)\\b"
+						}
+					]
+				},
+				{
+					"name": "meta.function.call.pana",
+					"patterns": [
+						{
+							"match": "([a-zA-ZáéíóúñüÁÉÍÓÚÑÜ_][a-zA-Z0-9áéíóúñüÁÉÍÓÚÑÜ_]*)(?=\\s*\\()",
+							"name": "entity.name.function.pana"
+						}
+					]
+				},
+				{
+					"name": "meta.variable.pana",
+					"patterns": [
+						{
+							"match": "\\b[a-zA-ZáéíóúñüÁÉÍÓÚÑÜ_][a-zA-Z0-9áéíóúñüÁÉÍÓÚÑÜ_]*\\b",
+							"name": "variable.pana"
+						}
+					]
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(mientras|para)\\b",
+					"name": "keyword.control.repeat.pana"
+				},
+				{
+					"name": "keyword.control.flow.pana",
+					"match": "\\b(romper|retornar|continuar)\\b"
+				},
+				{
+					"name": "keyword.control.conditional.pana",
+					"match": "\\b(si|sino)\\b"
+				},
+				{
+					"name": "keyword.constant.default.pana",
+					"match": "\\b(nulo)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.comparison.pana",
+					"match": "(==|!=|<=|>=|<|>|!)"
+				},
+				{
+					"name": "keyword.operator.arithmetic.pana",
+					"match": "(-%?|\\+%?|\\*%?|/|%)=?"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.pana",
+					"begin": "#",
+					"end": "$"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.pana",
+					"begin": "\"",
+					"end": "\""
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float.pana",
+					"match": "\\b\\d[\\d]*(\\.?)[\\d]*\\b"
+				},
+				{
+					"name": "constant.numeric.hexadecimal.pana",
+					"match": "\\b0x[a-fA-F0-9]+\\b"
+				},
+				{
+					"name": "constant.numeric.octal.pana",
+					"match": "\\b0o[0-7]+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.pana",
+					"match": "\\b0b[01]+\\b"
+				},
+				{
+					"name": "constant.language.bool.pana",
+					"match": "\\b(verdad|falso)\\b"
+				}
+			],
+	  "support": {
+				"patterns": [
+					{
+						"comment": "Built-in functions",
+						"name": "support.function.builtin.pana",
+						"match": "\\b(imprimir|rango|cadena|tipo)\\b"
+					}
+				]
+			}
+		}
+	}
+}

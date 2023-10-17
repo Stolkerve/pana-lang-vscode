@@ -1,0 +1,25 @@
+{
+  "name": "Pana-VSCode",
+  "displayName": "Lenguaje Pana",
+  "description": "Sintaxis de lenguaje Pana para VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pana",
+      "aliases": ["Lenguaje Pana", "pana"],
+      "extensions": [".pana"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pana",
+      "scopeName": "source.pana",
+      "path": "./syntaxes/pana.tmLanguage.json"
+    }]
+  }
+}
